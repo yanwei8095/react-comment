@@ -28,16 +28,17 @@ export default class AddComment extends Component{
 		}
 	}
 	render(){
+		const {username,content}=this.state;
 		return(
 			<div className="col-md-4">
 						<form className="form-horizontal">
 							<div className="form-group">
 								<label>用户名</label>
-								<input type="text" className="form-control" placeholder="用户名" onChange={this.change('username')}/>
+								<input type="text" className="form-control" value={username} placeholder="用户名" onChange={this.change('username')}/>
 							</div>
 							<div className="form-group">
 								<label>评论内容</label>
-								<textarea className="form-control" rows="6" placeholder="评论内容" onChange={this.change('content')}/>
+								<textarea className="form-control" rows="6"value={content}  placeholder="评论内容" onChange={this.change('content')}/>
 							</div>
 							<div className="form-group">
 								<div className="col-sm-offset-2 col-sm-10">
