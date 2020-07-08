@@ -1,9 +1,7 @@
 import React,{Component} from "react";
 import PropTypes from 'prop-types';
-import {connect} from "react-redux";
-import {delComment} from "../../redux/action-creators";
 
-class CommentItem extends Component{
+export default class CommentItem extends Component{
 	static propTypes={
 		comment:PropTypes.object.isRequired,
 		delComment:PropTypes.func.isRequired
@@ -29,9 +27,3 @@ class CommentItem extends Component{
 		)
 	}
 }
-
-/* ***************reudx相关代码***************** */
-export default connect(
-null,
-{delComment}
-)(CommentItem)

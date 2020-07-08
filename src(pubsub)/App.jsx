@@ -2,7 +2,6 @@ import React,{Component} from 'react';
 import AddComment from './component/add-comment';
 import CommentList from './component/comment-list';
 
-
 export default class App extends Component{
 		render(){
 		return (
