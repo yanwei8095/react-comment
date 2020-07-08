@@ -3,26 +3,7 @@ import AddComment from './component/add-comment';
 import CommentList from './component/comment-list';
 
 export default class App extends Component{
-	state={
-		comments:[
-			{username:'jack',content:'I love rose',id:1},
-			{username:'rose',content:'I love jack',id:2}
-		]
-	};
-	updateComment=(comment)=>{
-		const {comments}=this.state
-		this.setState({
-			comments:[{...comment,id:comments.length+1},...comments]
-		})
-	};
-	// 定义删除指定id的元素的方法
-	delComment=(id)=>{
-		this.setState({
-			comments:this.state.comments.filter(item=>item.id!==id)//保留return为true的元素
-		})
-	}
-	render(){
-		const {comments}=this.state;
+		render(){
 		return (
 			<div>
 				<header className="site-header jumbotron">
@@ -35,8 +16,8 @@ export default class App extends Component{
 					</div>
 				</header>
 				<div className="container">
-					<AddComment updateComment={this.updateComment}/>
-					<CommentList comments={comments} delComment={this.delComment}/>
+					<AddComment/>
+					<CommentList  delComment={this.delComment}/>
 				</div>
   </div>
 		)

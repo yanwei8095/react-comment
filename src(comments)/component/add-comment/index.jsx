@@ -1,6 +1,9 @@
 import React,{Component} from "react";
-import {publish} from "pubsub-js";
+import PropTypes from 'prop-types';
 export default class AddComment extends Component{
+		static propTypes = {
+			updateComment: PropTypes.func.isRequired
+		};
 	state={
 		username:'',
 		content:''
@@ -12,8 +15,8 @@ export default class AddComment extends Component{
 			alert('用户名和评论内容不能为空');
 			return;
 		}
-		// 添加评论
-		publish('ADD_COMMENT',{username,content});
+		// 添加数据
+		this.props.updateComment({username,content});
 		// 清空输入框
 		this.setState({username:'',content:''})
 	};
